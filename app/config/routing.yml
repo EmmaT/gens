@@ -1,0 +1,4 @@
+gens:
+    resource: "@GensBundle/Resources/config/routing.yml"
+    prefix:   /
+

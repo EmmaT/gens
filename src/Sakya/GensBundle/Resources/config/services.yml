@@ -1,0 +1,7 @@
+parameters:
+#    gens.example.class: Sakya\GensBundle\Example
+
+services:
+#    gens.example:
+#        class: %gens.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
