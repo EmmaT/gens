@@ -36,9 +36,8 @@ class Capitulo
     private $numerocapitulo;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="libro", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Libro", inversedBy="capitulo")
+     * @ORM\JoinColumn(name="libro_id", referencedColumnName="id")
      */
     private $libro;
 
@@ -107,29 +106,6 @@ class Capitulo
     }
 
     /**
-     * Set libro
-     *
-     * @param string $libro
-     * @return Capitulo
-     */
-    public function setLibro($libro)
-    {
-        $this->libro = $libro;
-
-        return $this;
-    }
-
-    /**
-     * Get libro
-     *
-     * @return string 
-     */
-    public function getLibro()
-    {
-        return $this->libro;
-    }
-
-    /**
      * Set contenido
      *
      * @param string $contenido
@@ -150,5 +126,28 @@ class Capitulo
     public function getContenido()
     {
         return $this->contenido;
+    }
+
+    /**
+     * Set libro
+     *
+     * @param \Sakya\GensBundle\Entity\Libro $libro
+     * @return Capitulo
+     */
+    public function setLibro(\Sakya\GensBundle\Entity\Libro $libro = null)
+    {
+        $this->libro = $libro;
+
+        return $this;
+    }
+
+    /**
+     * Get libro
+     *
+     * @return \Sakya\GensBundle\Entity\Libro 
+     */
+    public function getLibro()
+    {
+        return $this->libro;
     }
 }

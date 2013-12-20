@@ -36,12 +36,18 @@ class Libro
     private $autor;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="capitulo", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Capitulo", mappedBy="libro")
      */
     private $capitulo;
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->capitulo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -100,22 +106,32 @@ class Libro
     }
 
     /**
-     * Set capitulo
+     * Add capitulo
      *
-     * @param string $capitulo
+     * @param \Sakya\GensBundle\Entity\Capitulo $capitulo
      * @return Libro
      */
-    public function setCapitulo($capitulo)
+    public function addCapitulo(\Sakya\GensBundle\Entity\Capitulo $capitulo)
     {
-        $this->capitulo = $capitulo;
+        $this->capitulo[] = $capitulo;
 
         return $this;
     }
 
     /**
+     * Remove capitulo
+     *
+     * @param \Sakya\GensBundle\Entity\Capitulo $capitulo
+     */
+    public function removeCapitulo(\Sakya\GensBundle\Entity\Capitulo $capitulo)
+    {
+        $this->capitulo->removeElement($capitulo);
+    }
+
+    /**
      * Get capitulo
      *
-     * @return string 
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getCapitulo()
     {
