@@ -42,9 +42,23 @@ class DefaultController extends Controller
 
     public function showcapituloAction($libro, $capitulo)
     {
-        $micapitulo = $this->getDoctrine()
+        /*$em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            'SELECT l.id
+               FROM GensBundle:Libro l
+              WHERE l.libro = :libro'
+        )->setParameter('libro', $libro);
+
+        $micapitulo = $query->getResult();*/
+
+        /*$micapitulo = $this->getDoctrine()
                 ->getRepository('GensBundle:Capitulo')
-                ->findOneBy(array('libro' => $libro, 'capitulo' => $capitulo));
-        return $this->render('GensBundle:Default:showcapitulo.html.twig');
+                ->findBynumerocapitulo($capitulo);
+
+        //$milibro = $micapitulo->get*/
+
+        return $this->render('GensBundle:Default:showcapitulo.html.twig', 
+            array('micapitulo' => $micapitulo));
     }
 }
