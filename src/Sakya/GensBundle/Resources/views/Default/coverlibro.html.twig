@@ -4,5 +4,7 @@
 holas
 {% for itemlibro in listalibros %}
     <li><a href="{{ path('gens_libro', {'libro':itemlibro.libro})}}">{{itemlibro.libro}}</a></li>
+    {% else %}
+        <li><em>Oooops! Aun no se crean capítulos para este libro. Regresa más tarde</em></li>
 {% endfor %}
 {% endblock fos_user_content %}

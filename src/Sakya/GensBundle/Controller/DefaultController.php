@@ -12,15 +12,14 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-    	$listalibros = $this->getDoctrine()
-    	        ->getRepository('GensBundle:Libro')
-    	        ->findAll();
-    	 
-    	    if (!$listalibros) {
-    	        throw $this->createNotFoundException(
-    	            'No se han encontrado ningún Libro'
-    	        );
-    	    }
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            'SELECT l.libro
+            FROM GensBundle:Libro l');
+
+        $listalibros = $query->getResult();
+
         return $this->render('GensBundle:Default:index.html.twig', 
         	array('listalibros' => $listalibros));
     }
@@ -55,11 +54,7 @@ class DefaultController extends Controller
                              'numerocapitulo'  => $capitulo,));
         $micapitulo = $query->getResult();
 
-        /*$micapitulo = $this->getDoctrine()
-                ->getRepository('GensBundle:Capitulo')
-                ->findBynumerocapitulo($capitulo);
 
-        //$milibro = $micapitulo->get*/
 
         return $this->render('GensBundle:Default:showcapitulo.html.twig', 
             array('micapitulo' => $micapitulo));
