@@ -14,7 +14,7 @@ class CapituloData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        for ($i=1; $i < 200; $i++) { 
+        for ($i=1; $i < 20; $i++) { 
             $capituloXenoi = new Capitulo();
             $capituloXenoi->setlibro($this->getReference('libro-xenoi'));
             $capituloXenoi->setcapitulo('Holitas '.$i.'  - Xenoi');

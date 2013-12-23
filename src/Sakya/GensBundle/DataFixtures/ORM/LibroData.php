@@ -15,7 +15,7 @@ class LibroData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
 
-        for ($i=1; $i < 200; $i++) { 
+        for ($i=1; $i < 10; $i++) { 
             $libroXenoi = new Libro();
             $libroXenoi->setlibro('Xenoi'.$i);
             $libroXenoi->setautor('Giancarlo Ventura Granados');

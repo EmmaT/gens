@@ -4,4 +4,8 @@
 holas
 {{dump(micapitulo)}}
 
+{% for itemcapitulo in micapitulo %}
+    {{itemcapitulo.contenido}}
+{% endfor %}
+
 {% endblock fos_user_content %}

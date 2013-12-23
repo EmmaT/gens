@@ -1,5 +1,4 @@
 php app/console doctrine:database:drop --force
 php app/console doctrine:database:create
-php app/console doctrine:schema:create
-php app/console fos:user:create emma --super-admin
+php app/console doctrine:schema:update --force
 php app/console doctrine:fixtures:load

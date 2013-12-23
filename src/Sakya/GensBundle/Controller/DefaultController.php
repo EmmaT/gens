@@ -42,15 +42,18 @@ class DefaultController extends Controller
 
     public function showcapituloAction($libro, $capitulo)
     {
-        /*$em = $this->getDoctrine()->getManager();
+
+        $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery(
-            'SELECT l.id
+            'SELECT c.contenido
                FROM GensBundle:Libro l
-              WHERE l.libro = :libro'
-        )->setParameter('libro', $libro);
-
-        $micapitulo = $query->getResult();*/
+               JOIN l.capitulo c
+              WHERE l.libro = :libro AND c.numerocapitulo = :numerocapitulo'
+        )->setParameters(array(
+                            'libro' => $libro,
+                             'numerocapitulo'  => $capitulo,));
+        $micapitulo = $query->getResult();
 
         /*$micapitulo = $this->getDoctrine()
                 ->getRepository('GensBundle:Capitulo')
