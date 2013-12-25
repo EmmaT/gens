@@ -26,12 +26,17 @@ class DefaultController extends Controller
 
     public function showlibroAction($libro)
     {
-        $milibro = $this->getDoctrine()
-                ->getRepository('GensBundle:Libro')
-                ->findOneBylibro($libro);
+        $em = $this->getDoctrine()->getManager();
 
-        
-        $listacapitulos = $milibro->getCapitulo();
+        $query = $em->createQuery(
+            'SELECT c.capitulo, c.numerocapitulo
+               FROM GensBundle:Libro l
+               JOIN l.capitulo c
+              WHERE l.libro = :libro'
+              )->setParameter('libro', $libro);
+
+        $listacapitulos = $query->getResult();
+
 
         return $this->render('GensBundle:Default:showlibro.html.twig', 
             array('libro' => $libro, 'listacapitulos' => $listacapitulos));

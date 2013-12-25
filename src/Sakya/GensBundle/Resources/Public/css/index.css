@@ -173,6 +173,14 @@
     #feature_slider #slide-right:hover {
       opacity: 1; }
 
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
 /* Showcase services
 -------------------------------------------------- */
 #showcase {

@@ -2,112 +2,10 @@
 
 {% block stylesheets %}
 {{ parent() }}
-{% stylesheets '@GensBundle/Resources/public/css/index.css'
-			   '@GensBundle/Resources/public/css/slider/owl.carousel.css'
-			   '@GensBundle/Resources/public/css/slider/owl.theme.css' %}
-<link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
 {% endblock %}
 
 {% block fos_user_content %}
 
-    <div id="owl-example" class="owl-carousel">
-        <div class="item"><img src="http://www.owlgraphic.com/owlcarousel/demos/assets/fullimage1.jpg" alt="The Last of us"></div>
-        <div class="item"><img src="http://www.owlgraphic.com/owlcarousel/demos/assets/fullimage2.jpg" alt="GTA V"></div>
-        <div class="item"><img src="http://www.owlgraphic.com/owlcarousel/demos/assets/fullimage3.jpg" alt="Mirror Edge"></div>
-    </div>
-
-    <script>
-    $(document).ready(function() {
-      $("#owl-demo").owlCarousel({
-
-      navigation : true,
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-
-      // "singleItem:true" is a shortcut for:
-      // items : 1, 
-      // itemsDesktop : false,
-      // itemsDesktopSmall : false,
-      // itemsTablet: false,
-      // itemsMobile : false
-
-      });
-    });
-    </script>
-
-
-{# Begin features #}
-    <div id="showcase">
-        <div class="container">
-            <div class="section_header">
-                <h3>Lista de Libros</h3>
-            </div>            
-            <div class="row feature_wrapper">
-                <!-- Features Row -->
-                <div class="features_op1_row">
-                    <!-- Feature -->
-                    <div class="col-sm-4 feature first">
-                        <div class="img_box">
-                            <a href="services.html">
-                                <img src="img/service1.png">
-                                <span class="circle"> 
-                                    <span class="plus">&#43;</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h6>Responsive theme</h6>
-                            <p>
-                                There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Feature -->
-                    <div class="col-sm-4 feature">
-                        <div class="img_box">
-                            <a href="services.html">
-                                <img src="img/service2.png">
-                                <span class="circle"> 
-                                    <span class="plus">&#43;</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h6>Easy customization</h6>
-                            <p>
-                                There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Feature -->
-                    <div class="col-sm-4 feature last">
-                        <div class="img_box">
-                            <a href="services.html">
-                                <img src="img/service3.png">
-                                <span class="circle"> 
-                                    <span class="plus">&#43;</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h6>Made with love</h6>
-                            <p>
-                                There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {# End Features #}
-
-holas
-{% for itemlibro in listalibros %}
-    <li><a href="{{ path('gens_libro', {'libro':itemlibro.libro})}}">{{itemlibro.libro}}</a></li>
-{% endfor %}
 {% endblock fos_user_content %}
 
 {% block javascripts %}
@@ -116,6 +14,4 @@ holas
                '@GensBundle/Resources/public/js/slider/owl.carousel.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
-
-
 {% endblock %}
