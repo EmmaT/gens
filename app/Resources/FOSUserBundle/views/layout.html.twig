@@ -10,13 +10,115 @@
         <title>{% block title %}GensSakya!{% endblock %}</title>
         
         {% block stylesheets %}
-        {% stylesheets '@GensBundle/Resources/public/css/bootstrap.min.css' %}
-         <link rel="stylesheet" href="{{ asset_url }}" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+        {% stylesheets '@GensBundle/Resources/public/css/bootstrap.css'
+                       '@GensBundle/Resources/public/css/style.css'
+                       '@GensBundle/Resources/public/css/flexslider.css'
+                       '@GensBundle/Resources/public/css/prettyPhoto.css'
+                       '@GensBundle/Resources/public/css/fullwidth.css'
+                       '@GensBundle/Resources/public/css/rs-plugin/css/settings.css'
+                        %}
+        <link rel="stylesheet" media="screen" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% endblock %}
     </head>
 
     <body>
+
+    <!-- header section starts
+================================================== -->
+<section id="header">
+  <div class="container clearfix">
+    <div class="row"> 
+      
+      <!--logo starts-->
+      <div class="col-md-4 pos-rel"> <a href="index.html"><img src="img/logo.png" width="210" height="78" alt="logo"></a>
+        <div class="logo-info"></div>
+      </div>
+      <!--logo ends--> 
+      
+      <!--social starts-->
+      <div class="col-md-8">
+        <ul class="social">
+          <li class="pos-rel">
+            <div class="search-header">
+              <form class="searchform" method="get" action=".">
+                <input name="s" type="text" placeholder="" />
+              </form>
+            </div>
+          </li>
+          <li class="twitter-icon"><a href="#"><img src="img/icons/icon-twitter.png" alt="icon"></a></li>
+          <li class="facebook-icon"><a href="#"><img src="img/icons/icon-facebook.png" alt="icon"></a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <!--social ends--> 
+      
+      <!--menu starts-->
+      <div class="col-md-12">
+        <div class="menu-wrapper">
+          <div id="smoothmenu" class="ddsmoothmenu">
+            <ul>
+              <li><a href="index.html" class="selected">Home</a></li>
+              <li><a href="about.html">About</a> </li>
+              <li><a href="services.html">Services</a> </li>
+              <li><a href="#">Pages</a>
+                <ul>
+                  <li><a href="index-var1.html">Home variation - 1</a> </li>
+                  <li><a href="index-var2.html">Home variation - 2</a> </li>
+                  <li><a href="portfolio-4col.html">Portfolio</a>
+                    <ul>
+                      <li><a href="portfolio-4col.html">Portfolio 4 column</a> </li>
+                      <li><a href="portfolio-3col.html">Portfolio 3 column</a> </li>
+                      <li><a href="portfolio-2col.html">Portfolio 2 column</a> </li>
+                      <li><a href="portfolio-detail.html">Portfolio Single page</a> </li>
+                    </ul>
+                  </li>
+                  <li><a href="pricing-4col.html">Pricing</a>
+                    <ul>
+                      <li><a href="pricing-4col.html">Pricing 4 column</a> </li>
+                      <li><a href="pricing-3col.html">Pricing 3 column</a> </li>
+                    </ul>
+                  </li>
+                  <li><a href="team.html">Page layouts</a>
+                    <ul>
+                      <li><a href="multipost.html">Content + Sidebar</a></li>
+                      <li><a href="portfolio-detail.html">Sidebar + Content</a></li>
+                      <li><a href="sidebar-c-sidebar.html">Sidebar + Content + Sidebar</a></li>
+                      <li><a href="c-sidebar-sidebar.html">Content + Sidebar + Sidebar</a></li>
+                      <li><a href="sidebar-sidebar-c.html">Sidebar + Sidebar + Content</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="team.html">Team</a> </li>
+                  <li><a href="comingsoon.html">Coming soon</a> </li>
+                  <li><a href="404.html">404 error</a> </li>
+                  <li><a href="sitemap.html">Sitemap</a> </li>
+                  <li><a href="contact.html">Contact</a> </li>
+                </ul>
+              </li>
+              <li><a href="multipost.html">Blog</a>
+                <ul>
+                  <li><a href="multipost.html">Multipost</a></li>
+                  <li><a href="blogpost.html">Single post</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <ul class="inline-right">
+            <li><img src="img/icons/icon-phone.png" alt="icon"> (+91) 123 456-7892</li>
+            <li><img src="img/icons/icon-mail.png" alt="icon"> <a href="#">sayhello@megabiz.com</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!--menu ends--> 
+      
+    </div>
+  </div>
+</section>
+<!-- header section ends
+================================================== --> 
 
         {% for type, messages in app.session.flashbag.all() %}
             {% for message in messages %}
@@ -29,8 +131,59 @@
 
         {% block fos_user_content %}
         {% endblock fos_user_content %}
+
         {% block javascripts %}
-            <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+//  var tpj=jQuery;
+//  tpj.noConflict();
+//<![CDATA[
+$(document).ready(function () {
+    var api = $('.fullwidthbanner').revolution({
+        delay: 9000,
+        startwidth: 1170,
+        startheight: 500,
+        onHoverStop: "on", // Stop Banner Timet at Hover on Slide on/off
+        thumbWidth: 100, // Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+        thumbHeight: 50,
+        thumbAmount: 3,
+        hideThumbs: 1,
+        navigationType: "none", // bullet, thumb, none
+        navigationArrows: "solo", // nexttobullets, solo (old name verticalcentered), none
+        navigationStyle: "round", // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+        navigationHAlign: "left", // Vertical Align top,center,bottom
+        navigationVAlign: "bottom", // Horizontal Align left,center,right
+        navigationHOffset: 30,
+        navigationVOffset: 30,
+        soloArrowLeftHalign: "left",
+        soloArrowLeftValign: "center",
+        soloArrowLeftHOffset: 20,
+        soloArrowLeftVOffset: 0,
+        soloArrowRightHalign: "right",
+        soloArrowRightValign: "center",
+        soloArrowRightHOffset: 20,
+        soloArrowRightVOffset: 0,
+        touchenabled: "on", // Enable Swipe Function : on/off
+        stopAtSlide: -1, // Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+        stopAfterLoops: -1, // Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+        hideCaptionAtLimit: 0, // It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+        hideAllCaptionAtLilmit: 0, // Hide all The Captions if Width of Browser is less then this value
+        hideSliderAtLimit: 0, // Hide the whole slider, and stop also functions if Width of Browser is less than this value
+        fullWidth: "on",
+        shadow: 0 //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+    });
+});
+//]]
+</script> 
+        {% javascripts '@GensBundle/Resources/public/js/bootstrap.min.js'
+                       '@GensBundle/Resources/public/js/jquery.flexslider-min.js'
+                       '@GensBundle/Resources/public/js/jquery.prettyPhoto.js'
+                       '@GensBundle/Resources/public/js/ddsmoothmenu.js'
+                       '@GensBundle/Resources/public/js/custom.js'
+                       '@GensBundle/Resources/public/js/rs-plugin/js/jquery.themepunch.plugins.min.js'
+                       '@GensBundle/Resources/public/js/rs-plugin/js/jquery.themepunch.revolution.min.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
         {% endblock %}
     </body>
 </html>
