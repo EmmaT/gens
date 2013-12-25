@@ -33,7 +33,6 @@
       
       <!--logo starts-->
       <div class="col-md-4 pos-rel"> <a href="index.html"><img src="img/logo.png" width="210" height="78" alt="logo"></a>
-        <div class="logo-info"></div>
       </div>
       <!--logo ends--> 
       
@@ -55,53 +54,11 @@
       <!--social ends--> 
       
       <!--menu starts-->
+
       <div class="col-md-12">
         <div class="menu-wrapper">
           <div id="smoothmenu" class="ddsmoothmenu">
             <ul>
-              <li><a href="index.html" class="selected">Home</a></li>
-              <li><a href="about.html">About</a> </li>
-              <li><a href="services.html">Services</a> </li>
-              <li><a href="#">Pages</a>
-                <ul>
-                  <li><a href="index-var1.html">Home variation - 1</a> </li>
-                  <li><a href="index-var2.html">Home variation - 2</a> </li>
-                  <li><a href="portfolio-4col.html">Portfolio</a>
-                    <ul>
-                      <li><a href="portfolio-4col.html">Portfolio 4 column</a> </li>
-                      <li><a href="portfolio-3col.html">Portfolio 3 column</a> </li>
-                      <li><a href="portfolio-2col.html">Portfolio 2 column</a> </li>
-                      <li><a href="portfolio-detail.html">Portfolio Single page</a> </li>
-                    </ul>
-                  </li>
-                  <li><a href="pricing-4col.html">Pricing</a>
-                    <ul>
-                      <li><a href="pricing-4col.html">Pricing 4 column</a> </li>
-                      <li><a href="pricing-3col.html">Pricing 3 column</a> </li>
-                    </ul>
-                  </li>
-                  <li><a href="team.html">Page layouts</a>
-                    <ul>
-                      <li><a href="multipost.html">Content + Sidebar</a></li>
-                      <li><a href="portfolio-detail.html">Sidebar + Content</a></li>
-                      <li><a href="sidebar-c-sidebar.html">Sidebar + Content + Sidebar</a></li>
-                      <li><a href="c-sidebar-sidebar.html">Content + Sidebar + Sidebar</a></li>
-                      <li><a href="sidebar-sidebar-c.html">Sidebar + Sidebar + Content</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="team.html">Team</a> </li>
-                  <li><a href="comingsoon.html">Coming soon</a> </li>
-                  <li><a href="404.html">404 error</a> </li>
-                  <li><a href="sitemap.html">Sitemap</a> </li>
-                  <li><a href="contact.html">Contact</a> </li>
-                </ul>
-              </li>
-              <li><a href="multipost.html">Blog</a>
-                <ul>
-                  <li><a href="multipost.html">Multipost</a></li>
-                  <li><a href="blogpost.html">Single post</a></li>
-                </ul>
-              </li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
@@ -176,6 +133,7 @@ $(document).ready(function () {
 //]]
 </script> 
         {% javascripts '@GensBundle/Resources/public/js/bootstrap.min.js'
+                       '@GensBundle/Resources/public/js/modernizr.js'
                        '@GensBundle/Resources/public/js/jquery.flexslider-min.js'
                        '@GensBundle/Resources/public/js/jquery.prettyPhoto.js'
                        '@GensBundle/Resources/public/js/ddsmoothmenu.js'
