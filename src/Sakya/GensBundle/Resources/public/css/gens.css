@@ -1,0 +1,287 @@
+/*
+   ___                 __       _                
+  / _ \___ _ __  ___  / _\ __ _| | ___   _  __ _ 
+ / /_\/ _ \ '_ \/ __| \ \ / _` | |/ / | | |/ _` |
+/ /_\\  __/ | | \__ \ _\ \ (_| |   <| |_| | (_| |
+\____/\___|_| |_|___/ \__/\__,_|_|\_\\__, |\__,_|
+                                     |___/       
+
+
+  Theme name:   Clean (simple and minimalistic)
+  Author:       sakya_stelio@hotmail.com
+  Last updated: 26 / December / 2013
+*/
+
+
+/* Book items
+   ========================================================================= */
+
+/* --- common -------------------------------------------------------------- */
+.item {
+    border-bottom: medium solid #DDD;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+}
+
+.item #chunk_toc {
+    border: solid #777;
+    border-width: 2px 0;
+    float: right;
+    list-style: none;
+    margin: 1em 0 1em 1em;
+    padding: .5em 0;
+    max-width: 235px;
+}
+.item #chunk_toc li span {
+    padding-right: .25em;
+}
+.item #chunk_toc .level-1 {
+    display: none;
+}
+
+.item .chunk_nav {
+    background: #222;
+    color: #777;
+    height: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.item .chunk_nav li {
+    float: left;
+    line-height: 40px;
+    margin: 0;
+}
+.item .chunk_nav a {
+    color: #F5F5F5;
+    padding: .5em;
+    text-decoration: none;
+}
+.item .chunk_nav a:hover {
+    text-decoration: underline;
+}
+.item .chunk_nav .nav {
+    float: right;
+}
+.item .chunk_nav .index {
+    font-weight: bold;
+}
+.item .chunk_nav .nav .previous,
+.item .chunk_nav .nav .next {
+    float: left;
+    padding: 0 .5em 0 0;
+}
+
+/* --- item:cover ---------------------------------------------------------- */
+.item\:cover {
+    border-bottom: thick solid #777;
+    color: #222;
+    margin-bottom: .5em;
+    padding: 2.5em 2.5em 1.75em 0;
+}
+.item\:cover h1 {
+    font-size: 72px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 2em 2em 0 0;
+}
+.item\:cover h2 {
+    color: #777;
+    font-size: 36px;
+    font-weight: normal;
+    margin-top: .5em;
+}
+
+/* --- item:title ---------------------------------------------------------- */
+.item\:cover + .item\:title {
+    display: none;
+}
+.item\:title h1,
+.item\:title h2,
+.item\:title h3 {
+    font-weight: normal;
+    text-align: center;
+}
+.item\:title h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -2pt;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+.item\:title h2 {
+    font-size: 24px;
+    margin-top: .5em;
+}
+.item\:title h3 {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 1em;
+}
+
+/* --- item:dedication ----------------------------------------------------- */
+.item\:dedication {
+    font-style: italic;
+    text-align: center;
+}
+
+/* --- item:toc ------------------------------------------------------------ */
+.item\:toc {
+    margin-bottom: 2em;
+    padding-left: 0;
+}
+
+.item\:toc h1 {
+    font-size: 36px;
+    margin-bottom: .5em;
+}
+
+.item\:toc ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    -moz-column-count: 2;
+    -moz-column-gap: 3em;
+    -moz-column-rule: 1px solid #DDD;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 3em;
+    -webkit-column-rule: 1px solid #DDD;
+}
+
+.item\:toc ul li,
+.item\:toc ul li a {
+    font-size: 16px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+.item\:toc ul li a {
+    color: #152DC6;
+}
+.item\:toc ul li a:hover {
+    color: #152DC6 !important;
+    text-decoration: underline;
+}
+.item\:toc ul li.level-1,
+.item\:toc ul li.level-1 a {
+    color: #222;
+    font-size: 21px;
+    font-weight: bold;
+}
+.item\:toc ul li span {
+    color: #777;
+    padding-right: .3em;
+}
+.item\:toc ul li.level-1 span {
+    font-weight: normal;
+}
+
+.item\:toc ul li.level-2 {
+    margin-left: 1em;
+}
+.item\:toc ul li.level-3,
+.item\:toc ul li.level-4,
+.item\:toc ul li.level-5,
+.item\:toc ul li.level-6 {
+    margin-left: 3em;
+}
+
+/* --- item:lot, item:lof -------------------------------------------------- */
+.item\:lof ul,
+.item\:lot ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item\:lof ul a,
+.item\:lot ul a {
+    text-decoration: none;
+}
+
+.item\:lof ul li span,
+.item\:lot ul li span {
+    padding-right: .3em;
+}
+
+/* --- item:chapter -------------------------------------------------------- */
+.item\:chapter {
+    border-bottom: 0;
+}
+
+.item\:chapter h1 { font-size: 36px; margin-top: .5em; }
+.item\:chapter h2 { font-size: 24px; }
+.item\:chapter h3 { font-size: 21px; }
+.item\:chapter h4 { font-size: 16px; }
+.item\:chapter h5 { font-size: 14px; }
+.item\:chapter h6 { font-size: 14px; }
+
+.item\:chapter h1 + h2,
+.item\:chapter h2 + h3,
+.item\:chapter h3 + h4,
+.item\:chapter h4 + h5,
+.item\:chapter h5 + h6 {
+    margin-top: 1em;
+}
+
+.item\:chapter h1 span {
+    color: #777;
+    font-size: 90%;
+    font-weight: normal;
+    padding-bottom: .25em;
+}
+
+/* --- item:appendix ------------------------------------------------------- */
+.item\:appendix {
+    border-bottom: 0;
+}
+
+.item\:appendix h1 { font-size: 36px; margin-top: .5em; }
+.item\:appendix h2 { font-size: 24px; }
+.item\:appendix h3 { font-size: 21px; }
+.item\:appendix h4 { font-size: 16px; }
+.item\:appendix h5 { font-size: 14px; }
+.item\:appendix h6 { font-size: 14px; }
+
+.item\:appendix h1 + h2,
+.item\:appendix h2 + h3,
+.item\:appendix h3 + h4,
+.item\:appendix h4 + h5,
+.item\:appendix h5 + h6 {
+    margin-top: 1em;
+}
+
+.item\:appendix h1 span {
+    color: #777;
+    font-size: 90%;
+    font-weight: normal;
+    padding-bottom: .25em;
+}
+
+/* --- item:part ----------------------------------------------------------- */
+.item\:part {
+    border: solid #777;
+    border-width: medium 0;
+    padding: 0;
+}
+
+.item\:toc + .item\:part,
+.item\:lof + .item\:part,
+.item\:lot + .item\:part,
+.item\:chapter + .item\:part,
+.item\:appendix + .item\:part {
+    margin-top: -2em;
+}
+
+.item\:part h1 {
+    font-size: 48px;
+    margin: 0;
+    padding: 1em 0;
+}
+.item\:part h1 span {
+    color: #777;
+    font-size: 90%;
+    font-weight: normal;
+    padding-bottom: .25em;
+}
+
+

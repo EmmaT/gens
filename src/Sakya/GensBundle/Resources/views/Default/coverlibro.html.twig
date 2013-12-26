@@ -1,6 +1,45 @@
 {% extends 'FOSUserBundle::layout.html.twig' %}
 
 {% block fos_user_content %}
+<div class="container">
+
+<div class="item item:cover">
+    <h1>Gens Sakya - Xenoi</h1>
+    <h2>Change this: Author Name</h2>
+</div>
+
+<div class="item item:toc">
+
+<h1>Table of contents</h1>
+
+<ul>
+            
+                                            <li class="chapter level-1">
+                    <span>Chapter 1</span>
+                                        <a href="./chapter-1.html">The title of the first chapter</a>
+                                    </li>
+                                                <li class="chapter level-2">
+                    <span>1.1</span>
+                                        <a href="./chapter-1.html#ut-enim-ad-minim-veniam">Ut enim ad minim veniam</a>
+                                    </li>
+                        
+        
+                                            <li class="chapter level-1">
+                    <span>Chapter 2</span>
+                                        <a href="./chapter-2.html">The title of the second chapter</a>
+                                    </li>
+                                                <li class="chapter level-2">
+                    <span>2.1</span>
+                                        <a href="./chapter-2.html#ut-enim-ad-minim-veniam-3">Ut enim ad minim veniam</a>
+                                    </li>
+                        
+    </ul>
+
+</div>
+
+
+
+</div>
 holas
 {% for itemlibro in listalibros %}
     <li><a href="{{ path('gens_libro', {'libro':itemlibro.libro})}}">{{itemlibro.libro}}</a></li>
