@@ -15,7 +15,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery(
-            'SELECT l.libro
+            'SELECT l.libro, l.prefacio
             FROM GensBundle:Libro l');
 
         $listalibros = $query->getResult();

@@ -2,5 +2,33 @@
 
 {% block fos_user_content %}
 
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Gens Sakya</h1>
+    <p>Gens Sakya es una colección de libros web escritos en un formato novedoso.</p>
+    <p><a class="btn btn-primary btn-lg" role="button">Entérate más &raquo;</a></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+  <!-- Example row of columns -->
+  {% for itemlibro  in listalibros %}  
+    <div class="col-md-4">
+      <h2><a href="{{ path('gens_libro', {'libro': itemlibro.libro} ) }}"> {{itemlibro.libro}} </a></h2>
+      <p>{{itemlibro.prefacio}}. </p>
+      <p><a class="btn btn-default" href="{{ path('gens_libro', {'libro': itemlibro.libro} ) }}" role="button">View details &raquo;</a></p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Company 2013</p>
+  </footer>
+</div> <!-- /container -->
+
 {% endblock fos_user_content %}
 

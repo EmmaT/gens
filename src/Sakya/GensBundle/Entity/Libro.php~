@@ -144,27 +144,4 @@ class Libro
     {
         return $this->capitulo;
     }
-
-    /**
-     * Set prefacio
-     *
-     * @param string $prefacio
-     * @return Libro
-     */
-    public function setPrefacio($prefacio)
-    {
-        $this->prefacio = $prefacio;
-
-        return $this;
-    }
-
-    /**
-     * Get prefacio
-     *
-     * @return string 
-     */
-    public function getPrefacio()
-    {
-        return $this->prefacio;
-    }
 }
