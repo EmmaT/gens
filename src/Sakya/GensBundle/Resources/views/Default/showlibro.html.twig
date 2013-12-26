@@ -22,7 +22,12 @@
   <li class="chapter level-1">
     <span>Capítulo {{loop.index}} </span>
     <a href="./chapter-1.html">{{itemcapitulo.capitulo}}</a>
-  </li>                                         
+  </li> 
+  {% else %}
+  <li class="chapter level-1">
+    <span>Oooooops! Aun no hay capítulos para este libro.</span>
+  </li> 
+                                                                                      
 {% endfor %} 
 
 </ul>
