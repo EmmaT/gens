@@ -17,9 +17,9 @@ class CapituloData extends AbstractFixture implements OrderedFixtureInterface
         for ($i=1; $i < 20; $i++) { 
             $capituloXenoi = new Capitulo();
             $capituloXenoi->setlibro($this->getReference('libro-xenoi'));
-            $capituloXenoi->setcapitulo('Holitas '.$i.'  - Xenoi');
+            $capituloXenoi->setcapitulo($this->getNombre());
             $capituloXenoi->setnumerocapitulo($i);
-            $capituloXenoi->setcontenido('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Verbum defuturum tuum mortem affert naturales eloquentiam expeteremus. Mens hortensio ponendam scilicet illaberetur expectant comparat. Equidem primo velit afferat leviora efficeretur isti primisque, te plura nesciunt eosdem sumus homine puto responsum romanum consulatu, plerique exiguam. Inflammati neglegentur libero aliquos, tali nullo illas audita aetatis, sanos scribimus hausta extremum reliqui specie credo disputatum desiderare infantes, atomorum gustare aegritudinem. Debet meam animi profecto oculis eo forte, chrysippi splendide periculis inprobitatem primus esse fallare cyrenaicisque.');
+            $capituloXenoi->setcontenido($this->getContenido());
             $manager->persist($capituloXenoi);
         }
         
@@ -28,6 +28,55 @@ class CapituloData extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('capitulo-xenoi', $capituloXenoi);
     }
 
+    /**
+     * Generador aleatorio de nombres de ofertas.
+     *
+     * @return string Nombre/título aletorio generado para la oferta.
+     */
+    private function getNombre()
+    {
+        $palabras = array_flip(array(
+            'Lorem', 'Ipsum', 'Sitamet', 'Et', 'At', 'Sed', 'Aut', 'Vel', 'Ut',
+            'Dum', 'Tincidunt', 'Facilisis', 'Nulla', 'Scelerisque', 'Blandit',
+            'Ligula', 'Eget', 'Drerit', 'Malesuada', 'Enimsit', 'Libero',
+            'Penatibus', 'Imperdiet', 'Pendisse', 'Vulputae', 'Natoque',
+            'Aliquam', 'Dapibus', 'Lacinia'
+        ));
+
+        $numeroPalabras = rand(2, 4);
+
+        return implode(' ', array_rand($palabras, $numeroPalabras));
+    }
+
+    /**
+     * Generador aleatorio de descripciones de ofertas.
+     *
+     * @return string Descripción aletoria generada para la oferta.
+     */
+    private function getContenido()
+    {
+        $frases = array_flip(array(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Mauris ultricies nunc nec sapien tincidunt facilisis.',
+            'Nulla scelerisque blandit ligula eget hendrerit.',
+            'Sed malesuada, enim sit amet ultricies semper, elit leo lacinia massa, in tempus nisl ipsum quis libero.',
+            'Aliquam molestie neque non augue molestie bibendum.',
+            'Pellentesque ultricies erat ac lorem pharetra vulputate.',
+            'Donec dapibus blandit odio, in auctor turpis commodo ut.',
+            'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nam rhoncus lorem sed libero hendrerit accumsan.',
+            'Maecenas non erat eu justo rutrum condimentum.',
+            'Suspendisse leo tortor, tempus in lacinia sit amet, varius eu urna.',
+            'Phasellus eu leo tellus, et accumsan libero.',
+            'Pellentesque fringilla ipsum nec justo tempus elementum.',
+            'Aliquam dapibus metus aliquam ante lacinia blandit.',
+            'Donec ornare lacus vitae dolor imperdiet vitae ultricies nibh congue.',
+        ));
+
+        $numeroFrases = rand(3, 15);
+
+        return implode("\n", array_rand($frases, $numeroFrases));
+    }
     /**
      * {@inheritDoc}
      */

@@ -57,7 +57,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery(
-            'SELECT c.contenido
+            'SELECT c.contenido, c.numerocapitulo, c.capitulo
                FROM GensBundle:Libro l
                JOIN l.capitulo c
               WHERE l.libro = :libro AND c.numerocapitulo = :numerocapitulo'
