@@ -6,10 +6,9 @@
 \____/\___|_| |_|___/ \__/\__,_|_|\_\\__, |\__,_|
                                      |___/       
 
-
-  Theme name:   Clean (simple and minimalistic)
-  Author:       sakya_stelio@hotmail.com
+  Autor:       sakya_stelio@hotmail.com
   Last updated: 26 / December / 2013
+  Tomados de la hoja de estilos easybook.css de Javier Eguiluz
 */
 
 
@@ -230,6 +229,11 @@
     padding-bottom: .25em;
 }
 
+.blog-title h2{
+  font-family: 'montserratbold', sans-serif;
+  padding: 10px 0;
+  color: #1c2732;
+
 /* --- item:appendix ------------------------------------------------------- */
 .item\:appendix {
     border-bottom: 0;
@@ -285,3 +289,173 @@
 }
 
 
+/**
+* 7.2 Blog Standard
+*
+----------------------------------------------------------------------------
+*/
+.icon-wrapper{
+  position: relative;
+  margin: 45px auto 10px;
+  max-width: 350px;
+}
+.icon-wrapper > .inside{
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 5px solid #303030;
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  padding: 45px;
+  position: relative;
+  text-align: center;
+  width: 50px;
+  z-index: 2;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.icon-wrapper:before{
+  content: '';
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+}
+.icon-wrapper .inside > .icon{
+  color: #303030;
+  font-size: 35px;
+  margin: -16px;
+  position: absolute;
+  text-align: center;
+}
+.blog-title h2{
+  font-family: 'montserratbold', sans-serif;
+  padding: 10px 0;
+  color: #1c2732;
+}
+.blog-title .post-meta{
+  font-family: 'montserratregular', sans-serif;
+  color: #838383;
+}
+.post-meta a,
+.post-meta span{
+  color: #f38c4e;
+}
+.post-meta .sep{
+  color: #838383;
+  padding: 0 10px 0 10px;
+}
+.post-meta a:hover{
+  color: #14ddb3;
+  border-bottom: 1px dotted #14ddb3;
+}
+.blog-content > .format > figure,
+.blog-content > .format > article{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.blog .blog-content .format-image > article{
+  color: #777;
+  line-height: 1.5;
+}
+.single-blog .blog-content .format > article p,
+.blog .blog-content .format > article p{
+  font-weight: lighter;
+  font-family: 'montserratregular', sans-serif;
+  color: #777;
+  text-transform: none;
+  font-size: 16px;
+}
+.blog-content > .format > figure > img{
+  width: 100%;
+}
+.blog-subtitle,
+.blog-subtitle h4{
+  text-transform: uppercase;
+  font-family: 'montserratregular', sans-serif;
+  font-weight: normal;
+  padding-top: 15px;
+  color: #303030;
+}
+.read-more{
+  color: #14ddb3;
+}
+.read-more:hover{
+  border-bottom: 1px dotted #de6f2c;
+  color: #de6f2c;
+}
+.format-chat h4{
+  font-family: 'montserratbold', sans-serif;
+  font-size: 34px;
+  color: #303030;
+}
+.blog .format-chat > article{
+  padding-left: 35px!important;
+  padding-right: 35px!important;
+}
+.format-gallery > .slider-container{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.format-gallery > .slider-container ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+
+/**
+*  7.3 Blog Entries
+*
+----------------------------------------------------------------------------
+ */
+.blog-entries{
+  text-transform: uppercase;
+}
+.blog-entries article{
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+.blog-entries h5{
+ font-size: 22px;
+ color: #323232;
+ font-family: 'montserratregular',sans-serif;
+ font-weight: normal;
+ line-height: 1.4;
+ margin: 0 0 5px;
+}
+.blog-entries span{
+  line-height: 1;
+  color: #909090;
+  font-family: 'montserratregular', sans-serif;
+}
+.format-quote blockquote,
+.format-quote .entry-content blockquote{
+  font-family: 'Georgia', serif;
+  font-size: 33px;
+  font-weight: bold;
+  border-left: 8px solid #e3844b;
+  font-style: italic;
+  color: #444444;
+  margin: 0;
+  padding-top: 0;
+
+}
+.format-quote blockquote small,
+.format-quote .entry-content blockquote small{
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  display: block;
+  clear: both;
+  color: #777;
+  padding-top: 15px;
+}
