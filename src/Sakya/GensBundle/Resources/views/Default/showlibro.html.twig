@@ -19,7 +19,7 @@
 {% for itemcapitulo in listacapitulos %}
   <li class="chapter level-1">
     <span>Capítulo {{loop.index}} </span>
-    <a href="./chapter-1.html">{{itemcapitulo.capitulo}}</a>
+    <a href="{{ path('gens_capitulo', {'libro': libro, 'capitulo': loop.index}) }}">{{itemcapitulo.capitulo}}</a>
   </li> 
   {% else %}
   <li class="chapter level-1">

@@ -46,7 +46,7 @@ class DefaultController extends Controller
 
 
         return $this->render('GensBundle:Default:showlibro.html.twig', 
-            array('milibro' => $milibro, 'listacapitulos' => $listacapitulos));
+            array('milibro' => $milibro, 'listacapitulos' => $listacapitulos, 'libro' => $libro));
 
 
     }

@@ -11,3 +11,12 @@ gens_capitulo:
     defaults: { _controller: GensBundle:Default:showcapitulo }
     requirements:
         capitulo:  \d+
+
+admin_redirect:
+    pattern: /admin/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: dashboard }
+
+dashboard:
+    pattern: /admin/dashboard
+    defaults: { _controller: GensBundle:Admin:dashboard }
+
