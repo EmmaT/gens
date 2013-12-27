@@ -15,7 +15,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery(
-            'SELECT l.libro, l.prefacio
+            'SELECT l.libro, l.prefacio, l.slug
             FROM GensBundle:Libro l');
 
         $listalibros = $query->getResult();
@@ -30,7 +30,7 @@ class DefaultController extends Controller
         $querylibro = $this->getDoctrine()->getManager()->createQuery(
             'SELECT l.libro, l.autor
                FROM GensBundle:Libro l
-              WHERE l.libro = :libro'
+              WHERE l.slug = :libro'
               )->setParameter('libro', $libro);
 
         $milibro = $querylibro->getResult();
@@ -39,7 +39,7 @@ class DefaultController extends Controller
             'SELECT c.capitulo
                FROM GensBundle:Libro l
                JOIN l.capitulo c
-              WHERE l.libro = :libro'
+              WHERE l.slug = :libro'
         )->setParameter( 'libro', $libro);
         
         $listacapitulos = $querycapitulo->getResult();

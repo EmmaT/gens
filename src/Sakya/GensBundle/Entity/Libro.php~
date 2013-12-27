@@ -3,6 +3,9 @@
 namespace Sakya\GensBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Saka\GensBundle\Util\Util;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Libro
@@ -29,6 +32,13 @@ class Libro
     private $libro;
 
     /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
+     */
+    protected $slug;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="autor", type="string", length=255)
@@ -43,43 +53,15 @@ class Libro
     private $prefacio;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    public $path;
-
-    /**
      * @ORM\OneToMany(targetEntity="Capitulo", mappedBy="libro")
      */
     private $capitulo;
 
-
-    public function getAbsolutePath()
+    public function __toString()
     {
-        return null === $this->path
-            ? null
-            : $this->getUploadRootDir().'/'.$this->path;
+        return $this->getLibro();
     }
 
-    public function getWebPath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadDir().'/'.$this->path;
-    }
-
-    protected function getUploadRootDir()
-    {
-        // the absolute directory path where uploaded
-        // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        // get rid of the __DIR__ so it doesn't screw up
-        // when displaying uploaded doc/image in the view.
-        return 'uploads/documents';
-    }
 
     /**
      * Constructor

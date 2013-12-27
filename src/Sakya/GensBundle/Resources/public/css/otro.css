@@ -1,0 +1,8 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* icon font */
+[class*="entypo-"] { 
+  font-family: 'Entypo', sans-serif; 
+  margin: 30px;
+  font-size: 4em;
+}

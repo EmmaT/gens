@@ -5,11 +5,11 @@
 	{% for itemcapitulo in micapitulo %}
 	    <div class="icon-wrapper">
 	    <span class="inside">
-	    	<i class="icon icon-image"></i>
+	    	<i class="icon icon-pencil"></i>
 	    </span>
-	    				</div>
-	    <h2 class="blog-title"><span>Capítulo {{itemcapitulo.numerocapitulo}}</span> {{itemcapitulo.capitulo}}</h2>
-	    {{itemcapitulo.contenido}}
+	    </div>
+	    <div class="row"><h2 class="blog-tit"><span>Capítulo {{itemcapitulo.numerocapitulo}}</span> {{itemcapitulo.capitulo}}</h2></div>
+	    <div class="row"><div class="elcontenido">{{itemcapitulo.contenido}}</div></div>
 	{% endfor %}
 </div>
 

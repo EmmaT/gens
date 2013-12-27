@@ -3,6 +3,9 @@
 namespace Sakya\GensBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Sakya\GensBundle\Util\Util;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Libro
@@ -29,6 +32,13 @@ class Libro
     private $libro;
 
     /**
+     * @ORM\Column(type="string", unique=true)
+     *
+     * @Assert\NotBlank()
+     */
+    protected $slug;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="autor", type="string", length=255)
@@ -46,6 +56,11 @@ class Libro
      * @ORM\OneToMany(targetEntity="Capitulo", mappedBy="libro")
      */
     private $capitulo;
+
+    public function __toString()
+    {
+        return $this->getLibro();
+    }
 
 
     /**
@@ -75,6 +90,7 @@ class Libro
     public function setLibro($libro)
     {
         $this->libro = $libro;
+        $this->slug = Util::getSlug($libro);
 
         return $this;
     }
@@ -166,5 +182,28 @@ class Libro
     public function getPrefacio()
     {
         return $this->prefacio;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Libro
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

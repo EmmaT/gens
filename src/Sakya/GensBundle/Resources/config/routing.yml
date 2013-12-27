@@ -13,10 +13,14 @@ gens_capitulo:
         capitulo:  \d+
 
 admin_redirect:
-    pattern: /admin/
+    pattern: /admin
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: dashboard }
 
 dashboard:
-    pattern: /admin/dashboard
+    pattern: /admin/dashboard/
     defaults: { _controller: GensBundle:Admin:dashboard }
+
+crear_libro:
+    pattern: /admin/dashboard/crearlibro
+    defaults: { _controller: GensBundle:Admin:crearLibro }
 

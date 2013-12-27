@@ -16,9 +16,9 @@
   <!-- Example row of columns -->
   {% for itemlibro  in listalibros %}  
     <div class="col-md-4">
-      <h2><a href="{{ path('gens_libro', {'libro': itemlibro.libro} ) }}"> {{itemlibro.libro}} </a></h2>
+      <h2><a href="{{ path('gens_libro', {'libro': itemlibro.slug} ) }}"> {{itemlibro.libro}} </a></h2>
       <p>{{itemlibro.prefacio}}. </p>
-      <p><a class="btn btn-default" href="{{ path('gens_libro', {'libro': itemlibro.libro} ) }}" role="button">View details &raquo;</a></p>
+      <p><a class="btn btn-default" href="{{ path('gens_libro', {'libro': itemlibro.libro} ) }}" role="button">Leer! &raquo;</a></p>
     </div>
     {% endfor %}
   </div>
