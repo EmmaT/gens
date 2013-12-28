@@ -1,4 +1,11 @@
-
 {% block fos_user_bundle %}
-{{ form(form) }}
+<div class="container">
+	<div class="row">
+	Editar los libros<br>
+	{% for itemlibro in listalibros %}
+	    <a href="{{ path('editar_libro',{'libro': itemlibro.slug}) }}">{{itemlibro.libro}}</a><br>
+	{% endfor %}
+	</div>
+</div>
+{{ tinymce_init() }}
 {% endblock %}

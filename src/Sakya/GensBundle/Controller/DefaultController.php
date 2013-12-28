@@ -60,7 +60,7 @@ class DefaultController extends Controller
             'SELECT c.contenido, c.numerocapitulo, c.capitulo
                FROM GensBundle:Libro l
                JOIN l.capitulo c
-              WHERE l.libro = :libro AND c.numerocapitulo = :numerocapitulo'
+              WHERE l.slug = :libro AND c.numerocapitulo = :numerocapitulo'
         )->setParameters(array(
                             'libro' => $libro,
                              'numerocapitulo'  => $capitulo,));

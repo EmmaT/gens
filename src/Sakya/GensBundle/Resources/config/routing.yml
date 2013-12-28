@@ -12,10 +12,6 @@ gens_capitulo:
     requirements:
         capitulo:  \d+
 
-admin_redirect:
-    pattern: /admin
-    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: dashboard }
-
 dashboard:
     pattern: /admin/dashboard/
     defaults: { _controller: GensBundle:Admin:dashboard }
@@ -23,4 +19,18 @@ dashboard:
 crear_libro:
     pattern: /admin/dashboard/crearlibro
     defaults: { _controller: GensBundle:Admin:crearLibro }
+
+editar_libro:
+    pattern: /admin/dashboard/editarlibro/{libro}
+    defaults: { _controller: GensBundle:Admin:editarLibro }
+
+#Rutas para redirecciones
+
+_editar_libro:
+    pattern: /admin/dashboard/editarlibro/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: editar_libro }
+
+admin_redirect:
+    pattern: /admin
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: dashboard }
 
